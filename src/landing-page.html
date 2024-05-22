@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Landing Page</title>
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <link rel="stylesheet" href="output.css" />
+  </head>
+  <body>
+    <body class="h-full">
+      <div class="min-h-full">
+        <!-- Navbar -->
+        <nav
+          class="bg-[linear-gradient(135deg,_#E1D4ED_0%,_#E2E4F2_100%)]"
+          x-data="{ isOpen: false }">
+          <div class="mx-auto max-w-7xl px-4 py-2 sm:px-6 lg:px-8">
+            <!-- button logo -->
+            <div class="flex-shrink-0 ml-[75px] justify-start absolute">
+              <img
+                class="h-16 w-24"
+                src="/src/img/logo.svg"
+                alt="Your Company" />
+            </div>
+            <!-- button utama -->
+            <div class="flex h-16 items-center ml-60 justify-center">
+              <div class="flex items-center">
+                <div class="hidden md:block">
+                  <div class="mr-10 flex items-center space-x-4">
+                    <a
+                      href="/"
+                      class="text-black font-jakarta relative px-3 py-2 text-base font-medium"
+                      aria-current="page"
+                      >Dashboard</a
+                    >
+                    <a
+                      href="about_us_user.html"
+                      class="text-black font-jakarta relative px-3 py-2 text-base font-medium"
+                      >About Us</a
+                    >
+                    <a
+                      href="cattegories_user.html"
+                      class="text-black font-jakarta relative px-3 py-2 text-base font-medium"
+                      >Cattegories</a
+                    >
+                    <a
+                      href="contact_us_user.html"
+                      class="text-black font-jakarta relative px-3 py-2 text-base font-medium"
+                      >Contact Us</a
+                    >
+                  </div>
+                </div>
+              </div>
+              <!-- button kanan -->
+              <div class="hidden md:block">
+                <div class="flex ml-24 items-center">
+                  <!-- Sign in Button -->
+                  <div class="relative">
+                    <div>
+                      <button
+                        type="button"
+                        @click="isOpen = !isOpen"
+                        class=""
+                        id="user-menu-button"
+                        aria-expanded="false"
+                        aria-haspopup="true">
+                        <p
+                          class="text-black font-jakarta font-medium text-base">
+                          Sign In
+                        </p>
+                      </button>
+                    </div>
+                  </div>
+                  <!-- Sign Up Button -->
+                  <div class="relative ml-6">
+                    <div>
+                      <button
+                        type="button"
+                        @click="isOpen = !isOpen"
+                        class=""
+                        id="user-menu-button"
+                        aria-expanded="false"
+                        aria-haspopup="true">
+                        <p
+                          class="font-jakarta font-semibold text-base px-8 py-4 text-white bg-[#762BEB] hover:bg-indigo-800 transition-colors ease-in-out duration-200 rounded-xl border-t border-l border-b-4 border-r-4 border-black">
+                          Sign Up
+                        </p>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="-mr-2 flex md:hidden">
+                <!-- Mobile menu button -->
+                <button
+                  type="button"
+                  @click="isOpen = !isOpen"
+                  class="relative inline-flex items-center justify-center rounded-md bg-gray-800 p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
+                  aria-controls="mobile-menu"
+                  aria-expanded="false">
+                  <span class="absolute -inset-0.5"></span>
+                  <span class="sr-only">Open main menu</span>
+                  <!-- Menu open: "hidden", Menu closed: "block" -->
+                  <svg
+                    :class="{'hidden': isOpen, 'block': !isOpen }"
+                    class="block h-6 w-6"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    aria-hidden="true">
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                  </svg>
+                  <!-- Menu open: "block", Menu closed: "hidden" -->
+                  <svg
+                    :class="{'block': isOpen, 'hidden': !isOpen }"
+                    class="hidden h-6 w-6"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    aria-hidden="true">
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Mobile menu -->
+          <div x-show="isOpen" class="md:hidden" id="mobile-menu">
+            <div class="space-y-1 px-2 pb-3 pt-2 sm:px-3">
+              <a
+                href="/"
+                class="bg-gray-900 text-white block rounded-md px-3 py-2 text-base font-medium"
+                aria-current="page"
+                >Homepage</a
+              >
+              <a
+                href="about_us_user"
+                class="text-black hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium"
+                >About Us</a
+              >
+              <a
+                href="cattegories_user"
+                class="text-black hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium"
+                >Cattegories</a
+              >
+              <a
+                href="contact_us_user"
+                class="text-black hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium"
+                >Contact Us</a
+              >
+            </div>
+          </div>
+        </nav>
+        <!-- Hero Section -->
+        <header
+          class="bg-[linear-gradient(135deg,_#E1D4ED_0%,_#E2E4F2_100%)] h-svh">
+          <div
+            class="mx-auto font-jakarta flex flex-wrap max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
+            <div>
+              <h1
+                class="ml-[75px] font-jakarta mt-28 mb-5 text-6xl font-extrabold tracking-tight text-[#020014]">
+                Explore Business <br />
+                Insights Analytics
+              </h1>
+              <h2
+                class="ml-[75px] font-jakarta mb-5 font-medium text-lg text-[#65636B]">
+                Make a better decision based on what your customer needs <br />
+                without compromising your business value propositions.
+              </h2>
+              <div class="flex items-center ml-[75px]">
+                <img
+                  src="/src/img/image 6-1.png"
+                  alt=""
+                  class="w-8 h-8 rounded-full object-cover block" />
+                <img
+                  src="/src/img/image 6-2.png"
+                  alt=""
+                  class="w-8 h-8 rounded-full object-cover block -ml-2" />
+                <img
+                  src="/src/img/image 6.png"
+                  alt=""
+                  class="w-8 h-8 rounded-full object-cover block -ml-2" />
+                <p
+                  class="ml-4 font-jakarta font-semibold text-base mb-1 text-[#65636B]">
+                  Join 28K global founders
+                </p>
+              </div>
+              <div class="flex flex-row ml-[75px] mt-8">
+                <a
+                  class="text-xl font-jakarta font-bold px-16 py-4 text-white shadow-lg border-r-4 border-t border-l border-b-4 border-black bg-[#762BEB] rounded-lg mr-8 transition hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none"
+                  href=""
+                  >Try Free Trial</a
+                >
+                <a
+                  class="text-xl font-jakarta px-16 py-4 font-bold text-black bg-white rounded-lg border-r-4 border-t border-l border-b-4 border-black shadow-xl transition hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none"
+                  href=""
+                  >Call Sales</a
+                >
+              </div>
+            </div>
+            <div class="ml-[113px] mt-10">
+              <span
+                class="absolute px-[220px] py-[250px] bg-white border-t border-l border-b-8 border-r-8 border-black rounded-[50px]"></span>
+            </div>
+          </div>
+        </header>
+        <!-- All Integration Section -->
+        <section class="w-full mt-[112px]">
+          <!-- Tittle All Integrations -->
+          <h2 class="font-jakarta font-bold text-5xl text text-center mb-16">
+            All Integrations Available
+          </h2>
+          <div class="flex overflow-x-hidden space-x-4 group mb-6">
+            <div
+              class="flex space-x-4 animate-infinite-slide group-hover:paused">
+              <img src="/src/img/Frame 2.svg" class="max-w-none" alt="" />
+              <img src="/src/img/Frame 3.svg" class="max-w-none" alt="" />
+              <img src="/src/img/Frame 4.svg" class="max-w-none" alt="" />
+              <img src="/src/img/Frame 5.svg" class="max-w-none" alt="" />
+              <img src="/src/img/Frame 6.svg" class="max-w-none" alt="" />
+              <img src="/src/img/Frame 2.svg" class="max-w-none" alt="" />
+              <img src="/src/img/Frame 3.svg" class="max-w-none" alt="" />
+              <img src="/src/img/Frame 4.svg" class="max-w-none" alt="" />
+              <img src="/src/img/Frame 5.svg" class="max-w-none" alt="" />
+              <img src="/src/img/Frame 6.svg" class="max-w-none" alt="" />
+            </div>
+            <div
+              class="flex space-x-4 animate-infinite-slide hover:paused"
+              aria-hidden="true">
+              <img src="/src/img/Frame 2.svg" class="max-w-none" alt="" />
+              <img src="/src/img/Frame 3.svg" class="max-w-none" alt="" />
+              <img src="/src/img/Frame 4.svg" class="max-w-none" alt="" />
+              <img src="/src/img/Frame 5.svg" class="max-w-none" alt="" />
+              <img src="/src/img/Frame 6.svg" class="max-w-none" alt="" />
+              <img src="/src/img/Frame 2.svg" class="max-w-none" alt="" />
+              <img src="/src/img/Frame 3.svg" class="max-w-none" alt="" />
+              <img src="/src/img/Frame 4.svg" class="max-w-none" alt="" />
+              <img src="/src/img/Frame 5.svg" class="max-w-none" alt="" />
+              <img src="/src/img/Frame 6.svg" class="max-w-none" alt="" />
+            </div>
+          </div>
+          <div class="flex overflow-x-hidden space-x-4 group mb-[112px]">
+            <div
+              class="flex space-x-4 animate-infinite-slide group-hover:paused">
+              <img src="/src/img/Frame 2-1.svg" class="max-w-none" alt="" />
+              <img src="/src/img/Frame 3-1.svg" class="max-w-none" alt="" />
+              <img src="/src/img/Frame 4-1.svg" class="max-w-none" alt="" />
+              <img src="/src/img/Frame 5-1.svg" class="max-w-none" alt="" />
+              <img src="/src/img/Frame 2-1.svg" class="max-w-none" alt="" />
+              <img src="/src/img/Frame 3-1.svg" class="max-w-none" alt="" />
+              <img src="/src/img/Frame 4-1.svg" class="max-w-none" alt="" />
+            </div>
+            <div
+              class="flex space-x-4 animate-infinite-slide hover:paused"
+              aria-hidden="true">
+              <img src="/src/img/Frame 2-1.svg" class="max-w-none" alt="" />
+              <img src="/src/img/Frame 3-1.svg" class="max-w-none" alt="" />
+              <img src="/src/img/Frame 4-1.svg" class="max-w-none" alt="" />
+              <img src="/src/img/Frame 5-1.svg" class="max-w-none" alt="" />
+              <img src="/src/img/Frame 2-1.svg" class="max-w-none" alt="" />
+              <img src="/src/img/Frame 3-1.svg" class="max-w-none" alt="" />
+              <img src="/src/img/Frame 4-1.svg" class="max-w-none" alt="" />
+            </div>
+          </div>
+        </section>
+        <!-- Feature Section -->
+        <section
+          class="flex flex-wrap items-center justify-between px-8 py-12 mb-40 bg-white">
+          <div
+            class="w-full md:w-1/2 flex justify-center items-center mb-8 md:mb-0">
+            <span
+              class="absolute p-[100px] bg-[#EDD8EF] rounded-full filter ml-72 mb-48 blur-3xl z-0"></span>
+            <span
+              class="absolute p-[100px] bg-[#DAD8EF] rounded-full filter mt-56 -ml-40 blur-3xl z-0"></span>
+            <span
+              class="px-[90px] py-[110px] bg-white border-l border-t border-b-4 border-r-4 border-black absolute -ml-64 rounded-[50px]"></span>
+            <span
+              class="px-[90px] py-[110px] bg-white border-l border-t border-b-4 border-r-4 border-black absolute mb-56 rounded-[50px]"></span>
+            <span
+              class="px-[90px] py-[110px] bg-white border-l border-t border-b-4 border-r-4 border-black absolute mt-72 rounded-[50px]"></span>
+            <span
+              class="px-[90px] py-[110px] bg-white border-l border-t border-b-4 border-r-4 border-black absolute ml-64 rounded-[50px]"></span>
+          </div>
+          <div class="w-full md:w-1/2 md:pl-12 font-jakarta">
+            <h2 class="text-3xl font-bold mb-4">AI-Powered System</h2>
+            <p class="text-gray-600 mb-6">
+              Make a better decision based on what your <br />
+              customer needs without compromising your business value
+              propositions.
+            </p>
+            <div class="space-y-4">
+              <!-- Baris Pertama -->
+              <div class="flex items-start">
+                <div class="flex-shrink-0">
+                  <img
+                    src="/src/img/feature-section-1.png"
+                    alt="Icon"
+                    class="w-10 h-10 mr-4" />
+                </div>
+                <div>
+                  <h3 class="text-lg font-semibold">Digital Marketing</h3>
+                  <p class="text-gray-600">
+                    Make a better decision based on what your <br />
+                    customer needs without compromising.
+                  </p>
+                </div>
+              </div>
+              <!-- Baris Kedua -->
+              <div class="flex items-start">
+                <div class="flex-shrink-0">
+                  <img
+                    src="/src/img/feature-section-2.png"
+                    alt="Icon"
+                    class="w-10 h-10 mr-4" />
+                </div>
+                <div>
+                  <h3 class="text-lg font-semibold">Digital Marketing</h3>
+                  <p class="text-gray-600">
+                    Make a better decision based on what your <br />
+                    customer needs without compromising.
+                  </p>
+                </div>
+              </div>
+              <!-- Baris Ketiga -->
+              <div class="flex items-start">
+                <div class="flex-shrink-0">
+                  <img
+                    src="/src/img/feature-section-3.png"
+                    alt="Icon"
+                    class="w-10 h-10 mr-4" />
+                </div>
+                <div>
+                  <h3 class="text-lg font-semibold">Digital Marketing</h3>
+                  <p class="text-gray-600">
+                    Make a better decision based on what your customer needs
+                    without compromising.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- Build Bussines Option -->
+        <section class="py-16 bg-white text-center relative font-jakarta">
+          <div class="container mx-auto px-8">
+            <h2 class="text-5xl font-bold mb-8">Built For Business</h2>
+            <p class="text-gray-600 mb-12">
+              Make a better decision based on what your customer needs <br />
+              without compromising your business value propositions.
+            </p>
+            <div class="flex flex-wrap justify-center md:justify-between">
+              <!-- Card Pertama -->
+              <div
+                class="relative w-full md:w-1/3 p-4 mb-8 md:mb-0 blur-circle-1">
+                <div class="bg-white p-6 text-center">
+                  <img
+                    src="/src/img/Rectangle 4.svg"
+                    alt="Digital Marketing"
+                    class="w-[220px] h-[260px] mb-6" />
+                  <h3 class="text-lg text-left font-semibold mb-4">
+                    Digital Marketing
+                  </h3>
+                  <ul class="text-left space-y-2">
+                    <li class="flex items-center">
+                      <img
+                        src="/src/img/vuesax/bulk/vuesax/bulk/tick-circle.svg"
+                        class="w-[25px] mr-2"
+                        alt="" />Remarkable charts manage
+                    </li>
+                    <li class="flex items-center">
+                      <img
+                        src="/src/img/vuesax/bulk/vuesax/bulk/tick-circle.svg"
+                        class="w-[25px] mr-2"
+                        alt="" />Remarkable charts manage
+                    </li>
+                    <li class="flex items-center">
+                      <img
+                        src="/src/img/vuesax/bulk/vuesax/bulk/tick-circle.svg"
+                        class="w-[25px] mr-2"
+                        alt="" />Remarkable charts manage
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <!-- Card Kedua -->
+              <div
+                class="relative w-full md:w-1/3 p-4 mb-8 md:mb-0 blur-circle-1">
+                <div class="bg-white p-6 text-center">
+                  <img
+                    src="/src/img/Rectangle 4.svg"
+                    alt="Digital Marketing"
+                    class="w-[220px] h-[260px] mb-6" />
+                  <h3 class="text-lg text-left font-semibold mb-4">
+                    Digital Marketing
+                  </h3>
+                  <ul class="text-left space-y-2">
+                    <li class="flex items-center">
+                      <img
+                        src="/src/img/vuesax/bulk/vuesax/bulk/tick-circle.svg"
+                        class="w-[25px] mr-2"
+                        alt="" />Remarkable charts manage
+                    </li>
+                    <li class="flex items-center">
+                      <img
+                        src="/src/img/vuesax/bulk/vuesax/bulk/tick-circle.svg"
+                        class="w-[25px] mr-2"
+                        alt="" />Remarkable charts manage
+                    </li>
+                    <li class="flex items-center">
+                      <img
+                        src="/src/img/vuesax/bulk/vuesax/bulk/tick-circle.svg"
+                        class="w-[25px] mr-2"
+                        alt="" />Remarkable charts manage
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <!-- Card Ketiga -->
+              <div
+                class="relative w-full md:w-1/3 p-4 mb-8 md:mb-0 blur-circle-1">
+                <div class="bg-white p-6 text-center">
+                  <img
+                    src="/src/img/Rectangle 4.svg"
+                    alt="Digital Marketing"
+                    class="w-[220px] h-[260px] mb-6" />
+                  <h3 class="text-lg text-left font-semibold mb-4">
+                    Digital Marketing
+                  </h3>
+                  <ul class="text-left space-y-2">
+                    <li class="flex items-center">
+                      <img
+                        src="/src/img/vuesax/bulk/vuesax/bulk/tick-circle.svg"
+                        class="w-[25px] mr-2"
+                        alt="" />Remarkable charts manage
+                    </li>
+                    <li class="flex items-center">
+                      <img
+                        src="/src/img/vuesax/bulk/vuesax/bulk/tick-circle.svg"
+                        class="w-[25px] mr-2"
+                        alt="" />Remarkable charts manage
+                    </li>
+                    <li class="flex items-center">
+                      <img
+                        src="/src/img/vuesax/bulk/vuesax/bulk/tick-circle.svg"
+                        class="w-[25px] mr-2"
+                        alt="" />Remarkable charts manage
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </body>
+  </body>
+</html>
