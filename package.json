@@ -1,5 +1,5 @@
 {
-  "name": "my-project",
+  "name": "build-with-angga-tes-magang",
   "version": "1.0.0",
   "scripts": {
     "build:css": "tailwindcss build src/input.css -o src/output.css",
