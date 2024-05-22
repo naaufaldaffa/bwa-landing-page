@@ -1,7 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   mode: "jit", //mode ini digunakan untuk custom styling seperti background yang memiliki gradient stop position, stroke, dll
-  content: ["./src/**/*.{html,js}"],
+  content: ["./dist/**/*.{html,js}"],
   theme: {
     extend: {
       fontFamily: {
