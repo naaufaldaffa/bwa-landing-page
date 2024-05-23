@@ -2,7 +2,7 @@
   "name": "my-project",
   "version": "1.0.0",
   "scripts": {
-    "build:css": "tailwindcss build -i src/input.css -o src/output.css",
+    "build:css": "tailwindcss build -i src/input.css -o dist/output.css",
     "build": "npm run build:css"
   },
   "dependencies": {
